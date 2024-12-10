@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #ffe4e1; /* Light pink */
+            background-color: #ffeef2; /* Very light pink */
             font-family: 'Dancing Script', cursive; /* Quirky and playful font */
             color: #2d3436;
             padding: 20px;
@@ -63,35 +63,41 @@
     <h1>What’s Behind the Curtain?</h1>
     <p>Click the button below to open the curtain and reveal something absurdly wonderful!</p>
     <div id="curtain-container">
-        <img id="revealed-image" src="" alt="A hidden mystery" style="display: none;">
+        <!-- Hidden images preloaded -->
+    <img src="watermelon-hat.jpg" alt="Watermelon Hat" style="display: none;">
+    <img src="chicken-standing.jpg" alt="Chicken Standing" style="display: none;">
+    <img src="scary-patrick.jpg" alt="Scary Patrick" style="display: none;">
+    <img src="dog-human.jpg" alt="Dog Acting Human" style="display: none;">
+    <img src="dog-yoga.jpg" alt="Dog Doing Yoga" style="display: none;">
+    <img src="potato-weird.jpg" alt="Weird Potato" style="display: none;">
+    <img src="man-with-pineapple.jpg" alt="Man Holding Pineapple" style="display: none;">
+    <img src="pitbull-1.jpg" alt="Pitbull Looking Cool" style="display: none;">
+    <img src="cat-funny.jpg" alt="Funny Cat" style="display: none;">
+    <img src="weird-turkey.jpg" alt="Weird Turkey" style="display: none;">
+    <img src="shrek.png" alt="Shrek Classic" style="display: none;">
+    <img src="shrek-funny.jpg" alt="Funny Shrek" style="display: none;">
+    <img src="mr-bean.jpg" alt="Mr. Bean Being Weird" style="display: none;">
+</div>
+
+
     </div>
     <button id="reveal-button">Open the Curtain</button>
     <p><a href="index.html">Back to Homepage</a></p>
 
     <script>
-        const imageList = [
-            "watermelon-hat.jpg",
-            "chicken-standing.jpg",
-            "scary-patrick.jpg"
-            "dog-human.jpg",
-            "dog-yoga.jpg",
-            "potato-weird.jpg",
-            "man-with-pineapple.jpg",
-            "pitbull-1.jpg",
-            "cat-funny.jpg",
-            "weird-turkey.jpg",
-            "shrek.png",
-            "shrek-funny.jpg",
-            "mr-bean.jpg"
-        ];
-
         const revealImage = () => {
-            const randomIndex = Math.floor(Math.random() * imageList.length);
-            const selectedImage = imageList[randomIndex];
+            // Get all the hidden images
+            const images = document.querySelectorAll("#curtain-container img");
 
-            const imageElement = document.getElementById("revealed-image");
-            imageElement.src = selectedImage; // Set the image source
-            imageElement.style.display = "block"; // Show the image
+            // Randomly select one image
+            const randomIndex = Math.floor(Math.random() * images.length);
+            const selectedImage = images[randomIndex];
+
+            // Hide all images
+            images.forEach(img => img.style.display = "none");
+
+            // Show the selected image
+            selectedImage.style.display = "block";
         };
 
         document.getElementById("reveal-button").addEventListener("click", revealImage);
