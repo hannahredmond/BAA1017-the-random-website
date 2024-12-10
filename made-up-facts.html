@@ -5,15 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Bureau of Made-Up Facts - Discover completely fabricated facts for a laugh!">
     <meta name="keywords" content="made-up facts, random facts, humor, nonsense">
-    <meta name="author" content="Your Name">
+    <meta name="author" content="Hannah Redmond">
     <title>The Bureau of Made-Up Facts</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Facts Page-Specific Styling */
+        body {
+            background: linear-gradient(to bottom, #ffe259, #ffa751); /* Sunny gradient */
+            color: #2d3436;
+            font-family: 'Courier New', Courier, monospace; /* Quirky and unique font */
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            text-shadow: 2px 2px #ffbe76;
+            margin-bottom: 20px;
+        }
+
+        #fact-text {
+            background-color: #ffbe76; /* Warm orange box */
+            color: #2c3e50; /* Contrasting dark text */
+            font-size: 1.7rem;
+            font-style: italic;
+            padding: 25px;
+            border-radius: 15px;
+            border: 3px solid #e17055;
+            margin: 30px auto;
+            max-width: 70%;
+            text-align: center;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #e84393;
+            color: white;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #d63031;
+            transform: scale(1.1);
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            color: #6c5ce7;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>The Bureau of Made-Up Facts</h1>
-    <p>Click the button below to learn a "fact" that absolutely isn’t true, but is guaranteed to make you smile.</p>
+    <p>Prepare to uncover completely fake, wonderfully ridiculous "facts" that will make you question reality.</p>
     <div id="fact-container">
-        <p id="fact-text">"Press the button to reveal a totally real and definitely not made-up fact."</p>
+        <p id="fact-text">"Click the button to reveal a fabricated fact that’s totally not real."</p>
     </div>
     <button id="generate-fact">Get a Fact</button>
     <p><a href="index.html">Back to Homepage</a></p>
@@ -23,14 +82,18 @@
             "Octopuses invented yoga.",
             "Bananas are naturally magnetic.",
             "If you whisper to a potato, it grows faster.",
-            "Pigeons know how to play chess but prefer checkers.",
+            "Rainbows are caused by unicorns brushing their manes.",
             "The moon is 80% cheese and 20% imagination.",
-            "Carrots can sing, but only in private.",
-            "Waffles are just pancakes that went to therapy."
+            "Cats control the internet from a secret base.",
+            "Penguins secretly dominate world politics.",
+            "Cows invented rock and roll, but chickens popularized it.",
+            "Carrots are only orange because of ancient painters.",
+            "Ice cream was once used as currency in the Arctic."
         ];
 
         const generateFact = () => {
-            const fact = factList[Math.floor(Math.random() * factList.length)];
+            const randomIndex = Math.floor(Math.random() * factList.length);
+            const fact = factList[randomIndex];
             document.getElementById("fact-text").textContent = `"${fact}"`;
         };
 
