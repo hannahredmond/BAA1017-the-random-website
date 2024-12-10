@@ -7,35 +7,41 @@
     <meta name="keywords" content="curtain, random, humor, mystery">
     <meta name="author" content="Hannah Redmond">
     <title>What’s Behind the Curtain?</title>
-    <link rel="stylesheet" href="style.css">
     <style>
+        /* Styling for the page */
         body {
-            background-color: #ffeef2; /* Very light pink */
-            font-family: 'Dancing Script', cursive; /* Quirky and playful font */
-            color: #2d3436;
+            background-color: #ffebf0; /* Soft light pink */
+            font-family: 'Arial', sans-serif; /* Clean and simple font */
+            color: #333;
             padding: 20px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3rem;
-            color: #34495e;
-            text-shadow: 2px 2px #f8a5c2;
+            font-size: 2.5rem;
+            color: #d63384;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
         }
 
         #revealed-image {
-            max-width: 50%;
+            max-width: 60%;
             height: auto;
-            display: block;
+            display: none; /* Initially hidden */
             margin: 20px auto;
             border-radius: 15px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         button {
-            background-color: #ff6b81;
+            background-color: #d63384; /* Vibrant pink button */
             color: white;
-            font-size: 1.5rem;
-            padding: 15px 30px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -43,13 +49,14 @@
         }
 
         button:hover {
-            background-color: #ff4757;
+            background-color: #a6005a; /* Darker pink on hover */
             transform: scale(1.1);
         }
 
         a {
             text-decoration: none;
-            color: #6c5ce7;
+            color: #d63384;
+            font-size: 1rem;
             margin-top: 20px;
             display: inline-block;
         }
@@ -61,43 +68,39 @@
 </head>
 <body>
     <h1>What’s Behind the Curtain?</h1>
-    <p>Click the button below to open the curtain and reveal something absurdly wonderful!</p>
+    <p>Click the button below to reveal a random surprise!</p>
     <div id="curtain-container">
-        <!-- Hidden images preloaded -->
-    <img src="watermelon-hat.jpg" alt="Watermelon Hat" style="display: none;">
-    <img src="chicken-standing.jpg" alt="Chicken Standing" style="display: none;">
-    <img src="scary-patrick.jpg" alt="Scary Patrick" style="display: none;">
-    <img src="dog-human.jpg" alt="Dog Acting Human" style="display: none;">
-    <img src="dog-yoga.jpg" alt="Dog Doing Yoga" style="display: none;">
-    <img src="potato-weird.jpg" alt="Weird Potato" style="display: none;">
-    <img src="man-with-pineapple.jpg" alt="Man Holding Pineapple" style="display: none;">
-    <img src="pitbull-1.jpg" alt="Pitbull Looking Cool" style="display: none;">
-    <img src="cat-funny.jpg" alt="Funny Cat" style="display: none;">
-    <img src="weird-turkey.jpg" alt="Weird Turkey" style="display: none;">
-    <img src="shrek.png" alt="Shrek Classic" style="display: none;">
-    <img src="shrek-funny.jpg" alt="Funny Shrek" style="display: none;">
-    <img src="mr-bean.jpg" alt="Mr. Bean Being Weird" style="display: none;">
-</div>
-
-
+        <!-- Preloaded images at the same level as index.html -->
+        <img id="revealed-image" src="" alt="Mystery Image">
     </div>
     <button id="reveal-button">Open the Curtain</button>
     <p><a href="index.html">Back to Homepage</a></p>
 
     <script>
+        // List of images (at the same level as index.html)
+        const imageList = [
+            "watermelon-hat.jpg",
+            "chicken-standing.jpg",
+            "scary-patrick.jpg",
+            "dog-human.jpg",
+            "dog-yoga.jpg",
+            "potato-weird.jpg",
+            "man-with-pineapple.jpg",
+            "pitbull-1.jpg",
+            "cat-funny.jpg",
+            "weird-turkey.jpg",
+            "shrek.png",
+            "shrek-funny.jpg",
+            "mr-bean.jpg"
+        ];
+
         const revealImage = () => {
-            // Get all the hidden images
-            const images = document.querySelectorAll("#curtain-container img");
+            const randomIndex = Math.floor(Math.random() * imageList.length);
+            const selectedImage = imageList[randomIndex];
 
-            // Randomly select one image
-            const randomIndex = Math.floor(Math.random() * images.length);
-            const selectedImage = images[randomIndex];
-
-            // Hide all images
-            images.forEach(img => img.style.display = "none");
-
-            // Show the selected image
-            selectedImage.style.display = "block";
+            const imageElement = document.getElementById("revealed-image");
+            imageElement.src = selectedImage; // Set the image source
+            imageElement.style.display = "block"; // Show the image
         };
 
         document.getElementById("reveal-button").addEventListener("click", revealImage);
