@@ -13,43 +13,39 @@
     <h1>What’s Behind the Curtain?</h1>
     <p>Click the button below to open the curtain and reveal something absurdly wonderful!</p>
     <div id="curtain-container">
-        <div id="curtain">
-            <img id="revealed-image" src="" alt="Mystery item" style="display: none; max-width: 50%; height: auto;">
-        </div>
+        <img id="revealed-image" src="" alt="A hidden mystery" style="display: none;">
     </div>
     <button id="reveal-button">Open the Curtain</button>
     <p><a href="index.html">Back to Homepage</a></p>
 
     <script>
         const imageList = [
-            "images/watermelon-hat.jpg",
-            "images/chicken-standing.jpg",
-            "images/scary-patrick.jpg",
-            "images/coffee-dog.jpg",
-            "images/dog-human.jpg",
-            "images/dog-yoga.jpg",
-            "images/roast-potatoes.jpg",
-            "images/potato-weird.jpg",
-            "images/man-with-pineapple.jpg",
-            "images/pitbull-1.jpg",
-            "images/cat-funny.jpg",
-            "images/weird-turkey.jpg",
-            "images/shrek.png",
-            "images/shrek-funny.jpg",
-            "images/mr-bean.jpg",
-            "images/bougie-boy.jpg"
+        "images/watermelon-hat.jpg",
+        "images/chicken-standing.jpg",
+        "images/scary-patrick.jpg",
+        "images/coffee-dog.jpg",
+        "images/dog-human.jpg",
+        "images/dog-yoga.jpg",
+        "images/potato-weird.jpg",
+        "images/man-with-pineapple.jpg",
+        "images/pitbull-1.jpg",
+        "images/cat-funny.jpg",
+        "images/weird-turkey.jpg",
+        "images/shrek.png",
+        "images/shrek-funny.jpg",
+        "images/mr-bean.jpg"
         ];
 
         const revealImage = () => {
             const randomIndex = Math.floor(Math.random() * imageList.length);
+            const selectedImage = imageList[randomIndex];
+
             const imageElement = document.getElementById("revealed-image");
-            imageElement.src = imageList[randomIndex];
-            imageElement.style.display = "block";
+            imageElement.src = selectedImage; // Set the image source
+            imageElement.style.display = "block"; // Show the image
         };
 
         document.getElementById("reveal-button").addEventListener("click", revealImage);
     </script>
 </body>
 </html>
-
-    <script>
