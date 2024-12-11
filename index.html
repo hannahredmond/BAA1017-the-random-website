@@ -3,26 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to The Random Website, your hub for nonsense and hilarity!">
+    <meta name="description" content="The Random Website - Where nonsense meets creativity!">
+    <meta name="keywords" content="random, fun, humor, creativity, interactive">
+    <meta name="author" content="Hannah Redmond">
     <title>The Random Website</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Body Styling */
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            margin: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.3rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            max-width: 70%;
+            line-height: 1.5;
+        }
+
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .page-link {
+            text-decoration: none;
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            color: #ffffff;
+            background-color: #6c5ce7;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-link:hover {
+            background-color: #a29bfe;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <h1>Welcome to The Random Website!</h1>
-    <p>Your hub for nonsense, hilarity, and absolute randomness. Explore our wonderfully weird sections below and prepare to laugh, ponder, and maybe roll your eyes.</p>
+    <p>Get ready for absurd advice, ridiculous facts, and mysterious surprises. Click around and embrace the chaos!</p>
     <div class="link-container">
-        <div class="link">
-            <a href="questionable-advice.html">The Encyclopedia of Questionable Advice</a>
-            <p class="description">Get the worst advice you've never asked for! Press the button to generate hilariously bad advice.</p>
-        </div>
-        <div class="link">
-            <a href="behind-the-curtain.html">What’s Behind the Curtain?</a>
-            <p class="description">A mysterious curtain hides something absurd and unexpected. Click to reveal the madness!</p>
-        </div>
-        <div class="link">
-            <a href="made-up-facts.html">The Bureau of Made-Up Facts</a>
-            <p class="description">Discover completely fabricated "facts" that will make you question reality—or at least laugh.</p>
-        </div>
+        <a href="questionable-advice.html" class="page-link">The Encyclopedia of Questionable Advice</a>
+        <a href="made-up-facts.html" class="page-link">The Bureau of Made-Up Facts</a>
+        <a href="behind-the-curtain.html" class="page-link">What’s Behind the Curtain?</a>
     </div>
 </body>
 </html>
