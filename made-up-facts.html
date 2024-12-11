@@ -26,6 +26,13 @@
             margin-bottom: 20px;
         }
 
+        #fact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
         #fact-text {
             background-color: #ffbe76;
             color: #2c3e50;
@@ -73,11 +80,10 @@
 </head>
 <body>
     <h1>The Bureau of Made-Up Facts</h1>
-    <p>Click the button below to discover absurd and ridiculous "facts" you’ll wish were true.</p>
     <div id="fact-container">
         <p id="fact-text">"Press the button to reveal a totally real and definitely not made-up fact."</p>
+        <button id="generate-fact">Get a Fact</button>
     </div>
-    <button id="generate-fact">Get a Fact</button>
     <p><a href="index.html">Back to Homepage</a></p>
 
     <script>
