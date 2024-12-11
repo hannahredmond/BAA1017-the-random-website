@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Encyclopedia of Questionable Advice - Get the worst advice you've never asked for!">
-    <meta name="keywords" content="questionable advice, random advice, worst advice, humor">
     <meta name="author" content="Hannah Redmond">
     <title>The Encyclopedia of Questionable Advice</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background-color: #d4ed91; /* Lime green */
-            font-family: 'Roboto Mono', monospace;
-            color: #2d3436;
-            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            background-color: #d4ed91;
+            color: #2c3e50;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             text-align: center;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             color: #34495e;
+            margin-bottom: 20px;
         }
 
         #advice-text {
@@ -29,18 +33,17 @@
             font-weight: bold;
             padding: 20px;
             border-radius: 10px;
-            border: 3px solid #a8d741;
-            margin: 30px auto;
+            margin: 20px 0;
             max-width: 70%;
             text-align: center;
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         button {
             background-color: #5cb85c;
             color: white;
-            font-size: 1.5rem;
-            padding: 15px 30px;
+            font-size: 1.2rem;
+            padding: 10px 20px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -54,7 +57,7 @@
 
         a {
             text-decoration: none;
-            color: #d63384;
+            color: #5cb85c;
             font-size: 1rem;
             margin-top: 20px;
             display: inline-block;
@@ -92,4 +95,4 @@
         document.getElementById("generate-advice").addEventListener("click", generateAdvice);
     </script>
 </body>
-</html> 
+</html>
