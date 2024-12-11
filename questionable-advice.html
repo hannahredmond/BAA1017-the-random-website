@@ -26,6 +26,13 @@
             margin-bottom: 20px;
         }
 
+        #advice-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
         #advice-text {
             background-color: #b2df5d;
             color: #2c3e50;
@@ -73,11 +80,10 @@
 </head>
 <body>
     <h1>The Encyclopedia of Questionable Advice</h1>
-    <p>Press the button below to receive a piece of advice so bad, you'll wonder how it even exists.</p>
     <div id="advice-container">
         <p id="advice-text">"Press the button for some truly terrible advice."</p>
+        <button id="generate-advice">Get Advice</button>
     </div>
-    <button id="generate-advice">Get Advice</button>
     <p><a href="index.html">Back to Homepage</a></p>
 
     <script>
