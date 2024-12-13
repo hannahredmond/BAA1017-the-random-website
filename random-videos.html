@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Random Videos - A collection of funny and absurd YouTube videos.">
+    <meta name="author" content="Hannah Redmond">
+    <title>Random Videos</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #cce7ff; /* Light blue */
+            color: #2c3e50;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 20px;
+            max-width: 80%;
+            line-height: 1.5;
+        }
+
+        #video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            margin-top: 20px;
+            display: inline-block;
+            background-color: #007bff; /* Matching blue theme */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Videos</h1>
+    <p>Here’s a collection of funny and absurd videos to brighten your day!</p>
+    <div id="video-container">
+        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Funny Video 1"></iframe>
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Funny Video 2"></iframe>
+        <iframe src="https://www.youtube.com/embed/j5a0jTc9S10" title="Funny Video 3"></iframe>
+        <iframe src="https://www.youtube.com/embed/sNbGxOccYWc" title="Funny Video 4"></iframe>
+        <iframe src="https://www.youtube.com/embed/pr97vvh3VAM" title="Funny Video 5"></iframe>
+    </div>
+    <a href="index.html">Back to Homepage</a>
+</body>
+</html>
