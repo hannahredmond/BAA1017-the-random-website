@@ -7,7 +7,6 @@
     <meta name="author" content="Hannah Redmond">
     <title>The Bureau of Made-Up Facts</title>
     <style>
-        /* Centering the entire page */
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #ffe259; /* Bright orange */
@@ -20,7 +19,6 @@
             text-align: center;
         }
 
-        /* Container to hold everything */
         .container {
             display: flex;
             flex-direction: column;
@@ -82,32 +80,25 @@
 <body>
     <div class="container">
         <h1>The Bureau of Made-Up Facts</h1>
-        <p id="fact-text">"Press the button to reveal a totally real and definitely not made-up fact."</p>
-        <button id="generate-fact">Get a Fact</button>
+        <p id="fact-text">"Press the button to reveal a joke instead of a fact. It\u2019s just as absurd!"</p>
+        <button id="generate-fact">Get a Joke</button>
         <a href="index.html">Back to Homepage</a>
     </div>
 
     <script>
-        const factList = [
-            "Octopuses invented yoga.",
-            "Bananas are naturally magnetic.",
-            "If you whisper to a potato, it grows faster.",
-            "Rainbows are caused by unicorns washing their manes.",
-            "The moon is 80% cheese and 20% imagination.",
-            "Cats control the internet from a secret base.",
-            "Penguins secretly dominate world politics.",
-            "Cows invented rock and roll, but chickens popularized it.",
-            "Carrots are only orange because of ancient painters.",
-            "Ice cream was once used as currency in the Arctic."
-        ];
+        const factText = document.getElementById("fact-text");
+        const factButton = document.getElementById("generate-fact");
 
-        const generateFact = () => {
-            const randomIndex = Math.floor(Math.random() * factList.length);
-            const fact = factList[randomIndex];
-            document.getElementById("fact-text").textContent = `"${fact}"`;
-        };
-
-        document.getElementById("generate-fact").addEventListener("click", generateFact);
+        factButton.addEventListener("click", async () => {
+            try {
+                const response = await fetch("https://official-joke-api.appspot.com/jokes/random");
+                const data = await response.json();
+                factText.textContent = `"${data.setup} - ${data.punchline}"`;
+            } catch (error) {
+                factText.textContent = "Oops! Something went wrong. Try again.";
+                console.error(error);
+            }
+        });
     </script>
 </body>
 </html>
