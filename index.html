@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="The Random Website - Where nonsense meets creativity!">
-    <meta name="keywords" content="random, fun, humor, creativity, interactive">
     <meta name="author" content="Hannah Redmond">
     <title>The Random Website</title>
     <style>
-        /* Body Styling */
         body {
+            font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
             background-size: 400% 400%;
             animation: gradient 8s ease infinite;
-            font-family: 'Poppins', sans-serif;
             color: #2c3e50;
             margin: 0;
-            text-align: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
+            text-align: center;
         }
 
         @keyframes gradient {
@@ -40,7 +38,6 @@
         p {
             font-size: 1.3rem;
             color: #ffffff;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
             margin-bottom: 30px;
             max-width: 70%;
             line-height: 1.5;
@@ -67,6 +64,45 @@
             background-color: #a29bfe;
             transform: scale(1.1);
         }
+
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: left;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        form button {
+            background-color: #6c5ce7;
+            color: #ffffff;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #a29bfe;
+        }
     </style>
 </head>
 <body>
@@ -76,6 +112,20 @@
         <a href="questionable-advice.html" class="page-link">The Encyclopedia of Questionable Advice</a>
         <a href="made-up-facts.html" class="page-link">The Bureau of Made-Up Facts</a>
         <a href="behind-the-curtain.html" class="page-link">What’s Behind the Curtain?</a>
+        <a href="random-videos.html" class="page-link">Random Videos</a>
     </div>
+
+    <form action="#" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
 </body>
 </html>
