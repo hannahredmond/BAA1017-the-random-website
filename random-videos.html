@@ -12,12 +12,14 @@
             background-color: #cce7ff; /* Light blue */
             color: #2c3e50;
             margin: 0;
+            padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
+            padding-top: 20px; /* Ensures content is not cut off at the top */
         }
 
         h1 {
@@ -41,6 +43,7 @@
             gap: 20px;
             max-width: 800px;
             width: 100%;
+            padding: 10px;
         }
 
         iframe {
@@ -58,7 +61,7 @@
             font-size: 1rem;
             margin-top: 20px;
             display: inline-block;
-            background-color: #007bff; /* Matching blue theme */
+            background-color: #007bff;
             padding: 10px 20px;
             border-radius: 5px;
         }
@@ -75,8 +78,6 @@
         <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Funny Video 1"></iframe>
         <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Funny Video 2"></iframe>
         <iframe src="https://www.youtube.com/embed/j5a0jTc9S10" title="Funny Video 3"></iframe>
-        <iframe src="https://www.youtube.com/embed/sNbGxOccYWc" title="Funny Video 4"></iframe>
-        <iframe src="https://www.youtube.com/embed/pr97vvh3VAM" title="Funny Video 5"></iframe>
     </div>
     <a href="index.html">Back to Homepage</a>
 </body>
